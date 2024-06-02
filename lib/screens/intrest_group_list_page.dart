@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:muapp/constants/ig_list.dart';
 import 'package:muapp/screens/widget/ig_card.dart';
 
-import '../constants/ig_list.dart';
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class IntrestGroupListPage extends StatelessWidget {
+  const IntrestGroupListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +14,6 @@ class HomeScreen extends StatelessWidget {
         ),
         titleTextStyle: const TextStyle(
             fontSize: 30, fontFamily: 'Roboto-bold', color: Colors.black),
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return IgCard(
-            title: igList[index]['title'],
-            subtitle: igList[index]['subtitle'],
-          );
-        },
-        itemCount: igList.length,
       ),
     );
   }
