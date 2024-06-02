@@ -19,8 +19,10 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return IgCard(
+            image: igList[index]['image'],
             title: igList[index]['title'],
             subtitle: igList[index]['subtitle'],
+            id: igList[index]['id'],
           );
         },
         itemCount: igList.length,

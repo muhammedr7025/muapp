@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:muapp/constants/ig_list.dart';
-import 'package:muapp/screens/widget/ig_card.dart';
 
 class IntrestGroupListPage extends StatelessWidget {
   const IntrestGroupListPage({super.key});
