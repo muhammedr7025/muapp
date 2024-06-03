@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muapp/screens/home_screen.dart';
 import 'package:muapp/screens/ig_detail_view.dart';
+import 'package:muapp/screens/lc_card_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mu App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFD5C6E7)),
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomeScreen(),
         '/iglist': (context) => const HomeScreen(),
+        '/lccard': (context) => const LcCardPage()
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/igDetail') {

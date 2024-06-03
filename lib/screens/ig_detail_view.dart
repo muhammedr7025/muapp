@@ -1,6 +1,5 @@
 import 'package:action_slider/action_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:muapp/constants/ig_list.dart';
 
@@ -10,6 +9,13 @@ class IgDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void navNextPage() {
+      Navigator.pushNamed(
+        context,
+        '/lccard',
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('IG Details'),
@@ -78,9 +84,8 @@ class IgDetailPage extends StatelessWidget {
                 await Future.delayed(const Duration(seconds: 2));
                 controller.success(); //starts success animation
                 await Haptics.vibrate(HapticsType.success);
-
+                navNextPage();
                 await Future.delayed(const Duration(seconds: 1));
-
                 controller.reset(); //resets the slider
               },
               child: const Padding(

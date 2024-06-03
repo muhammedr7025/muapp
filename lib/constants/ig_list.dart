@@ -42,7 +42,7 @@ List<Map<String, dynamic>> igList = [
   {
     'id': 5,
     'image': 'assets/images/ig/arvr.png',
-    'title': 'Ar/Vr',
+    'title': 'AR/VR',
     'subtitle': 'Coding,Designing,Creative',
     'description':
         'Augmented and virtual reality (AR/VR) are immersive technologies that enable users to experience digitally rendered content.'
@@ -58,7 +58,7 @@ List<Map<String, dynamic>> igList = [
   {
     'id': 7,
     'image': 'assets/images/ig/qatesting.png',
-    'title': 'Qa',
+    'title': 'QA',
     'subtitle': 'Coding, Analysis',
     'description':
         'Quality assurance (QA) is any systematic process of determining whether a product or service meets specified requirements.'
