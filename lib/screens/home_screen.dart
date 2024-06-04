@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:muapp/screens/ig_detail_view.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:muapp/screens/Announcement_page.dart';
+import 'package:muapp/screens/carrer_page.dart';
 import 'package:muapp/screens/intrest_group_list_page.dart';
+import 'package:muapp/screens/more_page.dart';
 import 'package:responsive_navigation_bar/responsive_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,9 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final pages = [
     const IntrestGroupListPage(),
-    const IgDetailPage(id: 0),
-    Container(),
-    Container()
+    const AnnouncementPage(),
+    const CareerPage(),
+    const MorePage()
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,20 +34,21 @@ class _HomeScreenState extends State<HomeScreen> {
       body: pages[_selectedIndex],
       extendBody: true,
       bottomNavigationBar: ResponsiveNavigationBar(
-        backgroundColor: Color(0xFF9674c0),
+        backgroundColor: const Color(0xFF9674c0),
         selectedIndex: _selectedIndex,
         onTabChange: changeTab,
         // showActiveButtonText: false,
-        textStyle: const TextStyle(
+        textStyle: GoogleFonts.poppins(
+          fontSize: 20,
           color: Colors.white,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
         ),
         navigationBarButtons: const <NavigationBarButton>[
           NavigationBarButton(
               text: 'IG', icon: Icons.home, backgroundColor: Color(0xFF5a2b91)),
           NavigationBarButton(
             text: 'Notification',
-            icon: Icons.star,
+            icon: Icons.notifications,
             backgroundColor: Color(0xFF5a2b91),
           ),
           NavigationBarButton(
@@ -54,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           NavigationBarButton(
             text: 'More',
-            icon: Icons.settings,
+            icon: Icons.menu,
             backgroundColor: Color(0xFF5a2b91),
           ),
         ],
