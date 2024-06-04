@@ -3,6 +3,7 @@ import 'package:muapp/screens/home_screen.dart';
 import 'package:muapp/screens/ig_detail_view.dart';
 import 'package:muapp/screens/intrest_group_list_page.dart';
 import 'package:muapp/screens/lc_card_page.dart';
+final GlobalKey<ScaffoldMessengerState> snackbarKey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   runApp(const MyApp());

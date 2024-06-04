@@ -41,6 +41,10 @@ dependencies:
   http: ^1.2.1
   provider: ^6.1.2
   responsive_navigation_bar: ^4.0.4
+  flutter_secure_storage: ^9.0.0
+  dio: ^5.4.0
+  connectivity_plus: ^5.0.2
+
 
 dev_dependencies:
   flutter_test:
