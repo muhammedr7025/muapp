@@ -13,7 +13,7 @@ class ICNotifier extends ChangeNotifier {
 
   bool get getIsLoading => _isLoading;
   ICModel? _iCModel;
-  ICModel?get getIcModel => _iCModel;
+  ICModel? get getIcModel => _iCModel;
 
 
 
