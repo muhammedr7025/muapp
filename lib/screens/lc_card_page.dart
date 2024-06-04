@@ -14,18 +14,15 @@ class _LcCardPageState extends State<LcCardPage> {
   Widget build(BuildContext context) {
     final CardSwiperController controller = CardSwiperController();
     List<LcCard> cards = const [
-      LcCard(
-        txt: '1',
-        clr: Colors.blue,
-      ),
-      LcCard(
-        txt: '2',
-        clr: Colors.yellow,
-      ),
-      LcCard(
-        txt: '3',
-        clr: Colors.green,
-      )
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard(),
+      LcCard()
     ];
     return Scaffold(
       appBar: AppBar(
@@ -62,7 +59,7 @@ class _LcCardPageState extends State<LcCardPage> {
                 children: [
                   FloatingActionButton(
                     onPressed: () => controller.swipe(CardSwiperDirection.left),
-                    child: const Icon(Icons.keyboard_arrow_left),
+                    child: const Text('Reject'),
                   ),
                   FloatingActionButton(
                     onPressed: controller.undo,
@@ -71,7 +68,7 @@ class _LcCardPageState extends State<LcCardPage> {
                   FloatingActionButton(
                     onPressed: () =>
                         controller.swipe(CardSwiperDirection.right),
-                    child: const Icon(Icons.keyboard_arrow_right),
+                    child: const Text('Accept'),
                   ),
                 ],
               ),

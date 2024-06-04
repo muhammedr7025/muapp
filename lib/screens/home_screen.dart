@@ -1,31 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:muapp/screens/widget/ig_card.dart';
+import 'package:muapp/screens/ig_detail_view.dart';
+import 'package:muapp/screens/intrest_group_list_page.dart';
+import 'package:responsive_navigation_bar/responsive_navigation_bar.dart';
 
-import '../constants/ig_list.dart';
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  void changeTab(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final pages = [
+    const IntrestGroupListPage(),
+    const IgDetailPage(id: 0),
+    Container(),
+    Container()
+  ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Interest Group',
+      body: pages[_selectedIndex],
+      extendBody: true,
+      bottomNavigationBar: ResponsiveNavigationBar(
+        backgroundColor: Color(0xFF9674c0),
+        selectedIndex: _selectedIndex,
+        onTabChange: changeTab,
+        // showActiveButtonText: false,
+        textStyle: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
-        titleTextStyle: const TextStyle(
-            fontSize: 30, fontFamily: 'Roboto-bold', color: Colors.black),
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return IgCard(
-            image: igList[index]['image'],
-            title: igList[index]['title'],
-            subtitle: igList[index]['subtitle'],
-            id: igList[index]['id'],
-          );
-        },
-        itemCount: igList.length,
+        navigationBarButtons: const <NavigationBarButton>[
+          NavigationBarButton(
+              text: 'IG', icon: Icons.home, backgroundColor: Color(0xFF5a2b91)),
+          NavigationBarButton(
+            text: 'Notification',
+            icon: Icons.star,
+            backgroundColor: Color(0xFF5a2b91),
+          ),
+          NavigationBarButton(
+            text: 'Careers',
+            icon: Icons.settings,
+            backgroundColor: Color(0xFF5a2b91),
+          ),
+          NavigationBarButton(
+            text: 'More',
+            icon: Icons.settings,
+            backgroundColor: Color(0xFF5a2b91),
+          ),
+        ],
       ),
     );
   }

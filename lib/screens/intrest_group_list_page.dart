@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../constants/ig_list.dart';
+import 'widget/ig_card.dart';
 
 class IntrestGroupListPage extends StatelessWidget {
   const IntrestGroupListPage({super.key});
@@ -12,6 +14,17 @@ class IntrestGroupListPage extends StatelessWidget {
         ),
         titleTextStyle: const TextStyle(
             fontSize: 30, fontFamily: 'Roboto-bold', color: Colors.black),
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return IgCard(
+            image: igList[index]['image'],
+            title: igList[index]['title'],
+            subtitle: igList[index]['subtitle'],
+            id: igList[index]['id'],
+          );
+        },
+        itemCount: igList.length,
       ),
     );
   }

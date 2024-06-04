@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muapp/screens/home_screen.dart';
 import 'package:muapp/screens/ig_detail_view.dart';
+import 'package:muapp/screens/intrest_group_list_page.dart';
 import 'package:muapp/screens/lc_card_page.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/iglist': (context) => const HomeScreen(),
+        '/iglist': (context) => const IntrestGroupListPage(),
         '/lccard': (context) => const LcCardPage()
       },
       onGenerateRoute: (settings) {
