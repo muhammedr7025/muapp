@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/ig_list.dart';
 import 'widget/ig_card.dart';
 
@@ -9,11 +10,14 @@ class IntrestGroupListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Interest Group',
+          style: GoogleFonts.poppins(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
         ),
-        titleTextStyle: const TextStyle(
-            fontSize: 30, fontFamily: 'Roboto-bold', color: Colors.black),
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
