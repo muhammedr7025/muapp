@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class IgCard extends StatelessWidget {
   final String title;
@@ -52,21 +51,19 @@ class IgCard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    title,
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    subtitle,
-                    style: GoogleFonts.poppins(
-                      fontSize: 13,
-                      color: Colors.black,
-                    ),
-                  ),
+                  Text(title,
+                      style: const TextStyle(
+                        fontFamily: 'Poppins-Bold',
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      )),
+                  Text(subtitle,
+                      style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        color: Colors.black,
+                      )),
                 ],
               ),
             ),

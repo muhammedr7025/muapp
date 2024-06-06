@@ -45,7 +45,9 @@ class LcCard extends StatelessWidget {
                   children: <Widget>[
                     Text('My cutee',
                         style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                            fontFamily: 'Poppins-Bold',
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
                     Row(
                       children: [
                         Icon(
@@ -59,6 +61,7 @@ class LcCard extends StatelessWidget {
                         Text(
                           '5',
                           style: TextStyle(
+                            fontFamily: 'Poppins-Bold',
                             fontSize: 20,
                           ),
                         ),
@@ -77,6 +80,7 @@ class LcCard extends StatelessWidget {
                         Text(
                           '2500',
                           style: TextStyle(
+                            fontFamily: 'Poppins-Bold',
                             fontSize: 20,
                           ),
                         ),

@@ -44,7 +44,6 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   dio: ^5.4.0
   connectivity_plus: ^5.0.2
-  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -84,12 +83,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Roboto
+    - family: Poppins
       fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Light.ttf
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 600
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 500
+
   # fonts:
   #   - family: Schyler
   #     fonts:

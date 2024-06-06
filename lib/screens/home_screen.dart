@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:muapp/screens/Announcement_page.dart';
 import 'package:muapp/screens/carrer_page.dart';
 import 'package:muapp/screens/intrest_group_list_page.dart';
@@ -38,11 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedIndex: _selectedIndex,
         onTabChange: changeTab,
         // showActiveButtonText: false,
-        textStyle: GoogleFonts.poppins(
-          fontSize: 20,
-          color: Colors.white,
-          fontWeight: FontWeight.w500,
-        ),
+        textStyle: const TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Poppins-Bold'),
         navigationBarButtons: const <NavigationBarButton>[
           NavigationBarButton(
               text: 'IG', icon: Icons.home, backgroundColor: Color(0xFF5a2b91)),

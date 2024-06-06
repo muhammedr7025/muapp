@@ -1,7 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-
-
 class CacheService {
   static final CacheService _singleton = CacheService._internal();
 
@@ -23,11 +21,10 @@ class CacheService {
 
   Future deleteCache({required String key}) async {
     FlutterSecureStorage sharedPreferences = const FlutterSecureStorage();
-    await sharedPreferences.delete(key: key) ;
+    await sharedPreferences.delete(key: key);
   }
 
   Future deleteSignUpCache() async {
     FlutterSecureStorage sharedPreferences = const FlutterSecureStorage();
-
-    }
+  }
 }
