@@ -73,16 +73,16 @@ class Response {
 }
 
 class Datum {
-  String id;
-  String name;
-  IgName igName;
-  String orgName;
-  int memberCount;
+  dynamic id;
+  dynamic name;
+  dynamic igName;
+  dynamic orgName;
+  int? memberCount;
   dynamic members;
-  String? meetPlace;
-  String? meetTime;
-  String leadName;
-  int karma;
+  dynamic meetPlace;
+  dynamic meetTime;
+  dynamic leadName;
+  int? karma;
 
   Datum({
     required this.id,
@@ -100,7 +100,7 @@ class Datum {
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json["id"],
         name: json["name"],
-        igName: igNameValues.map[json["ig_name"]]!,
+        igName: json["ig_name"],
         orgName: json["org_name"],
         memberCount: json["member_count"],
         members: json["members"],
@@ -113,7 +113,7 @@ class Datum {
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        "ig_name": igNameValues.reverse[igName],
+        "ig_name": igName,
         "org_name": orgName,
         "member_count": memberCount,
         "members": members,
@@ -124,9 +124,8 @@ class Datum {
       };
 }
 
-enum IgName { WEB_DEVELOPMENT }
 
-final igNameValues = EnumValues({"Web Development": IgName.WEB_DEVELOPMENT});
+
 
 class Pagination {
   int count;

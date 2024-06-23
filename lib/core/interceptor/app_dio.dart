@@ -24,7 +24,7 @@ class Api {
       ..add(LogInterceptor(
           responseBody: true,
           error: true,
-          requestHeader: true,
+          requestHeader: false,
           responseHeader: false,
           request: true,
           requestBody: true))

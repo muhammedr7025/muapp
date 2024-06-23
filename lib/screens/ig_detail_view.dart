@@ -87,7 +87,7 @@ class IgDetailPage extends StatelessWidget {
               toggleColor: const Color(0xFFD5C6E7),
               action: (controller) async {
                 controller.loading(); //starts loading animation
-                await context.read<ICNotifier>().igList(context: context, ig: igList[id]['apiid'], district: "thiruvanthapuram");
+                await context.read<ICNotifier>().igList(context: context, ig: igList[id]['apiid'], district: "thiruvananthapuram",pageIndex: 1);
                 controller.success(); //starts success animation
                 await Haptics.vibrate(HapticsType.success);
                 navNextPage();
