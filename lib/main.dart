@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mu App',
+      
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFD5C6E7)),
           useMaterial3: true,

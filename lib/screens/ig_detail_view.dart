@@ -2,6 +2,8 @@ import 'package:action_slider/action_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:muapp/constants/ig_list.dart';
+import 'package:muapp/core/notifier/ig_list_notifier.dart';
+import 'package:provider/provider.dart';
 
 class IgDetailPage extends StatelessWidget {
   final int id;
@@ -85,7 +87,7 @@ class IgDetailPage extends StatelessWidget {
               toggleColor: const Color(0xFFD5C6E7),
               action: (controller) async {
                 controller.loading(); //starts loading animation
-                await Future.delayed(const Duration(seconds: 2));
+                await context.read<ICNotifier>().igList(context: context, ig: igList[id]['apiid'], district: "thiruvanthapuram");
                 controller.success(); //starts success animation
                 await Haptics.vibrate(HapticsType.success);
                 navNextPage();
@@ -93,7 +95,7 @@ class IgDetailPage extends StatelessWidget {
                 controller.reset(); //resets the slider
               },
               child: const Padding(
-                padding:  EdgeInsets.only(left: 38.0, top: 3),
+                padding: EdgeInsets.only(left: 38.0, top: 3),
                 child: Text('Slide to explore Learning circle',
                     style: TextStyle(
                         fontSize: 14,

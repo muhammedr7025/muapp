@@ -11,7 +11,7 @@ class ICNotifier extends ChangeNotifier {
   ICModel? _iCModel;
   ICModel? get getIcModel => _iCModel;
 
-  Future<void> _igList(
+  Future<void> igList(
       {required BuildContext context,
       required String ig,
       required String district}) async {
