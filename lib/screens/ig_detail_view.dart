@@ -2,6 +2,8 @@ import 'package:action_slider/action_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:muapp/constants/ig_list.dart';
+import 'package:muapp/core/notifier/ig_list_notifier.dart';
+import 'package:provider/provider.dart';
 
 class IgDetailPage extends StatelessWidget {
   final int id;
@@ -18,7 +20,12 @@ class IgDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('IG Details'),
+        title: const Text('IG Details',
+            style: TextStyle(
+                fontSize: 25,
+                color: Colors.black,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins-Bold')),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -43,23 +50,22 @@ class IgDetailPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
-                    igList[id]['title'],
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),
-                  ),
+                  Text(igList[id]['title'],
+                      style: const TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins-Bold')),
                   const SizedBox(height: 5),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
                     child: Text(
                       igList[id]['description'],
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey[600],
-                      ),
+                      style: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                          fontFamily: 'Poppins'),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -81,7 +87,7 @@ class IgDetailPage extends StatelessWidget {
               toggleColor: const Color(0xFFD5C6E7),
               action: (controller) async {
                 controller.loading(); //starts loading animation
-                await Future.delayed(const Duration(seconds: 2));
+                await context.read<ICNotifier>().igList(context: context, ig: igList[id]['apiid'], district: "thiruvananthapuram",pageIndex: 1);
                 controller.success(); //starts success animation
                 await Haptics.vibrate(HapticsType.success);
                 navNextPage();
@@ -89,11 +95,12 @@ class IgDetailPage extends StatelessWidget {
                 controller.reset(); //resets the slider
               },
               child: const Padding(
-                padding: EdgeInsets.only(left: 38.0),
-                child: Text(
-                  'Slide to explore Learning circle',
-                  style: TextStyle(fontSize: 15),
-                ),
+                padding: EdgeInsets.only(left: 38.0, top: 3),
+                child: Text('Slide to explore Learning circle',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'Poppins')),
               ),
             ),
           ),

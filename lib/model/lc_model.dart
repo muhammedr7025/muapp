@@ -22,18 +22,18 @@ class ICModel {
   });
 
   factory ICModel.fromJson(Map<String, dynamic> json) => ICModel(
-    hasError: json["hasError"],
-    statusCode: json["statusCode"],
-    message: Message.fromJson(json["message"]),
-    response: Response.fromJson(json["response"]),
-  );
+        hasError: json["hasError"],
+        statusCode: json["statusCode"],
+        message: Message.fromJson(json["message"]),
+        response: Response.fromJson(json["response"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "hasError": hasError,
-    "statusCode": statusCode,
-    "message": message.toJson(),
-    "response": response.toJson(),
-  };
+        "hasError": hasError,
+        "statusCode": statusCode,
+        "message": message.toJson(),
+        "response": response.toJson(),
+      };
 }
 
 class Message {
@@ -44,12 +44,12 @@ class Message {
   });
 
   factory Message.fromJson(Map<String, dynamic> json) => Message(
-    general: List<dynamic>.from(json["general"].map((x) => x)),
-  );
+        general: List<dynamic>.from(json["general"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "general": List<dynamic>.from(general.map((x) => x)),
-  };
+        "general": List<dynamic>.from(general.map((x) => x)),
+      };
 }
 
 class Response {
@@ -62,27 +62,27 @@ class Response {
   });
 
   factory Response.fromJson(Map<String, dynamic> json) => Response(
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-    pagination: Pagination.fromJson(json["pagination"]),
-  );
+        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        pagination: Pagination.fromJson(json["pagination"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    "pagination": pagination.toJson(),
-  };
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
+        "pagination": pagination.toJson(),
+      };
 }
 
 class Datum {
-  String id;
-  String name;
-  IgName igName;
-  String orgName;
-  int memberCount;
+  dynamic id;
+  dynamic name;
+  dynamic igName;
+  dynamic orgName;
+  int? memberCount;
   dynamic members;
-  String? meetPlace;
-  String? meetTime;
-  String leadName;
-  int karma;
+  dynamic meetPlace;
+  dynamic meetTime;
+  dynamic leadName;
+  int? karma;
 
   Datum({
     required this.id,
@@ -98,39 +98,34 @@ class Datum {
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["id"],
-    name: json["name"],
-    igName: igNameValues.map[json["ig_name"]]!,
-    orgName: json["org_name"],
-    memberCount: json["member_count"],
-    members: json["members"],
-    meetPlace: json["meet_place"],
-    meetTime: json["meet_time"],
-    leadName: json["lead_name"],
-    karma: json["karma"],
-  );
+        id: json["id"],
+        name: json["name"],
+        igName: json["ig_name"],
+        orgName: json["org_name"],
+        memberCount: json["member_count"],
+        members: json["members"],
+        meetPlace: json["meet_place"],
+        meetTime: json["meet_time"],
+        leadName: json["lead_name"],
+        karma: json["karma"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "ig_name": igNameValues.reverse[igName],
-    "org_name": orgName,
-    "member_count": memberCount,
-    "members": members,
-    "meet_place": meetPlace,
-    "meet_time": meetTime,
-    "lead_name": leadName,
-    "karma": karma,
-  };
+        "id": id,
+        "name": name,
+        "ig_name": igName,
+        "org_name": orgName,
+        "member_count": memberCount,
+        "members": members,
+        "meet_place": meetPlace,
+        "meet_time": meetTime,
+        "lead_name": leadName,
+        "karma": karma,
+      };
 }
 
-enum IgName {
-  WEB_DEVELOPMENT
-}
 
-final igNameValues = EnumValues({
-  "Web Development": IgName.WEB_DEVELOPMENT
-});
+
 
 class Pagination {
   int count;
@@ -148,20 +143,20 @@ class Pagination {
   });
 
   factory Pagination.fromJson(Map<String, dynamic> json) => Pagination(
-    count: json["count"],
-    totalPages: json["totalPages"],
-    isNext: json["isNext"],
-    isPrev: json["isPrev"],
-    nextPage: json["nextPage"],
-  );
+        count: json["count"],
+        totalPages: json["totalPages"],
+        isNext: json["isNext"],
+        isPrev: json["isPrev"],
+        nextPage: json["nextPage"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "count": count,
-    "totalPages": totalPages,
-    "isNext": isNext,
-    "isPrev": isPrev,
-    "nextPage": nextPage,
-  };
+        "count": count,
+        "totalPages": totalPages,
+        "isNext": isNext,
+        "isPrev": isPrev,
+        "nextPage": nextPage,
+      };
 }
 
 class EnumValues<T> {

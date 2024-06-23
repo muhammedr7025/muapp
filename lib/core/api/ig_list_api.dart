@@ -2,12 +2,13 @@ import '../../../constants/api_const/api_const.dart';
 import '../interceptor/app_dio.dart';
 
 class IGListApi {
-  Future iGListApi({required String ig,required String district}) async {
-    const String subUrl = "lc-list?ig=Web Development&district=Thiruvananthapuram";
+  Future iGListApi({required String ig,required String district,required int pageIndex}) async {
+    String subUrl = "/lc-list";
     String uri = AppAPI.baseUrl + subUrl;
     final queryParam ={
       "ig":ig,
-      "district":district
+      "district":district,
+      "pageIndex":pageIndex
     };
     final response = await Api().dio.get(
       uri,queryParameters: queryParam

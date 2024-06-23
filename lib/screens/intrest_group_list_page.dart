@@ -9,11 +9,12 @@ class IntrestGroupListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Interest Group',
-        ),
-        titleTextStyle: const TextStyle(
-            fontSize: 30, fontFamily: 'Roboto-bold', color: Colors.black),
+        title: const Text('Interest Group',
+            style: TextStyle(
+              fontFamily: 'Poppins-Bold',
+              fontSize: 25,
+              color: Colors.black,
+            )),
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {

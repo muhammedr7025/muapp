@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:muapp/core/interceptor/retry_interceptor.dart';
 import '../../constants/api_const/api_const.dart';
 import '../../main.dart';
-import 'auth_interceptor.dart';
 import 'connectivity_retry_interceptor.dart';
 
 class Api {
@@ -22,13 +21,13 @@ class Api {
     var dio = Dio();
     dio.options.baseUrl = AppAPI.baseUrl;
     dio.interceptors
-    ..add(LogInterceptor(
-        responseBody: true,
-        error: true,
-        requestHeader: true,
-        responseHeader: false,
-        request: true,
-        requestBody: true))
+      ..add(LogInterceptor(
+          responseBody: true,
+          error: true,
+          requestHeader: false,
+          responseHeader: false,
+          request: true,
+          requestBody: true))
       // ..add(AuthInterceptor(dio))
       ..add(AppInterceptors(dio))
       ..add(
@@ -79,13 +78,14 @@ class AppInterceptors extends Interceptor {
         break;
       case DioErrorType.unknown:
         const SnackBar snackBar = SnackBar(
-            backgroundColor: Colors.red, content: Text("No Internet Connection"));
+            backgroundColor: Colors.red,
+            content: Text("No Internet Connection"));
         snackbarKey.currentState?.showSnackBar(snackBar);
         break;
       case DioExceptionType.badCertificate:
-        // TODO: Handle this case.
+      // TODO: Handle this case.
       case DioExceptionType.connectionError:
-        // TODO: Handle this case.
+      // TODO: Handle this case.
     }
     return handler.next(err);
   }
@@ -151,5 +151,5 @@ class DeadlineExceededException extends DioError {
   @override
   String toString() {
     return 'The connection has timed out, please try again.';
-   }
+  }
 }

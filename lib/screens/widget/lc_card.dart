@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class LcCard extends StatelessWidget {
   const LcCard({
-    super.key,
+   super.key,required this.karma,required this.memberCount,required this.title,
   });
+ final String karma;
+ final String memberCount;
+ final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -40,25 +43,28 @@ class LcCard extends StatelessWidget {
               flex: 1,
               child: Container(
                 padding: const EdgeInsets.only(left: 13, right: 10, top: 12),
-                child: const Column(
+                child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('My cutee',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    Text(title,
+                        style: const TextStyle(
+                            fontFamily: 'Poppins-Bold',
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.people, // The icon
                           color: Color.fromARGB(255, 10, 10, 10), // Icon color
                           size: 25, // Icon size
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
-                          '5',
-                          style: TextStyle(
+                          memberCount,
+                          style: const TextStyle(
+                            fontFamily: 'Poppins-Bold',
                             fontSize: 20,
                           ),
                         ),
@@ -75,8 +81,9 @@ class LcCard extends StatelessWidget {
                           width: 5,
                         ),
                         Text(
-                          '2500',
+                          karma,
                           style: TextStyle(
+                            fontFamily: 'Poppins-Bold',
                             fontSize: 20,
                           ),
                         ),
