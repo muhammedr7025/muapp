@@ -10,6 +10,12 @@ class IntrestGroupListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Interest Group',
+            style: TextStyle(
+              fontFamily: 'Poppins-Bold',
+              fontSize: 25,
+              color: Colors.black,
+            )),
         title: Text(
           'Interest Group',
           style: GoogleFonts.poppins(

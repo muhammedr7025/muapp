@@ -52,6 +52,20 @@ class IgCard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+                  Text(title,
+                      style: const TextStyle(
+                        fontFamily: 'Poppins-Bold',
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      )),
+                  Text(subtitle,
+                      style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        color: Colors.black,
+                      )),
+
                   Text(
                     title,
                     style: GoogleFonts.poppins(

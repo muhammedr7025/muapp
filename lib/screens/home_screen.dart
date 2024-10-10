@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:muapp/screens/Announcement_page.dart';
+import 'package:muapp/screens/carrer_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:muapp/screens/Announcement_page.dart';
 import 'package:muapp/screens/carrer_page.dart';
@@ -39,6 +41,12 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedIndex: _selectedIndex,
         onTabChange: changeTab,
         // showActiveButtonText: false,
+        textStyle: const TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Poppins-Bold'),
+
         textStyle: GoogleFonts.poppins(
           fontSize: 20,
           color: Colors.white,

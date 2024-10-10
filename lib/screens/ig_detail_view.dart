@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:muapp/constants/ig_list.dart';
+import 'package:muapp/core/notifier/ig_list_notifier.dart';
+import 'package:provider/provider.dart';
 
 class IgDetailPage extends StatelessWidget {
   final int id;
@@ -19,6 +21,12 @@ class IgDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        title: const Text('IG Details',
+            style: TextStyle(
+                fontSize: 25,
+                color: Colors.black,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins-Bold')),
         title: Text(
           'IG Details',
           style: GoogleFonts.poppins(
@@ -51,6 +59,13 @@ class IgDetailPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Text(igList[id]['title'],
+                      style: const TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins-Bold')),
+
                   Text(
                     igList[id]['title'],
                     style: GoogleFonts.poppins(
@@ -65,6 +80,10 @@ class IgDetailPage extends StatelessWidget {
                         horizontal: 10, vertical: 10),
                     child: Text(
                       igList[id]['description'],
+                      style: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                          fontFamily: 'Poppins'),
                       style: GoogleFonts.poppins(
                         fontSize: 15,
                         color: Colors.black,
@@ -90,13 +109,21 @@ class IgDetailPage extends StatelessWidget {
               toggleColor: const Color(0xFFD5C6E7),
               action: (controller) async {
                 controller.loading(); //starts loading animation
-                await Future.delayed(const Duration(seconds: 2));
+                await context.read<ICNotifier>().igList(context: context, ig: igList[id]['apiid'], district: "thiruvananthapuram",pageIndex: 1);
                 controller.success(); //starts success animation
                 await Haptics.vibrate(HapticsType.success);
                 navNextPage();
                 await Future.delayed(const Duration(seconds: 1));
                 controller.reset(); //resets the slider
               },
+              child: const Padding(
+                padding: EdgeInsets.only(left: 38.0, top: 3),
+                child: Text('Slide to explore Learning circle',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontFamily: 'Poppins')),
+
               child: Padding(
                 padding: const EdgeInsets.only(left: 38.0, top: 3),
                 child: Text(
