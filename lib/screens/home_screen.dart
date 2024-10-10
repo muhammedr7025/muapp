@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:muapp/screens/Announcement_page.dart';
 import 'package:muapp/screens/carrer_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:muapp/screens/Announcement_page.dart';
+import 'package:muapp/screens/carrer_page.dart';
+import 'package:muapp/screens/ig_detail_view.dart';
 import 'package:muapp/screens/intrest_group_list_page.dart';
 import 'package:muapp/screens/more_page.dart';
 import 'package:responsive_navigation_bar/responsive_navigation_bar.dart';
@@ -42,6 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.white,
             fontWeight: FontWeight.w500,
             fontFamily: 'Poppins-Bold'),
+
+        textStyle: GoogleFonts.poppins(
+          fontSize: 20,
+          color: Colors.white,
+          fontWeight: FontWeight.w500,
+        ),
         navigationBarButtons: const <NavigationBarButton>[
           NavigationBarButton(
               text: 'IG', icon: Icons.home, backgroundColor: Color(0xFF5a2b91)),

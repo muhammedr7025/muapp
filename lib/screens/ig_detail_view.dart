@@ -1,5 +1,6 @@
 import 'package:action_slider/action_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:muapp/constants/ig_list.dart';
 import 'package:muapp/core/notifier/ig_list_notifier.dart';
@@ -26,6 +27,14 @@ class IgDetailPage extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Poppins-Bold')),
+        title: Text(
+          'IG Details',
+          style: GoogleFonts.poppins(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -56,6 +65,15 @@ class IgDetailPage extends StatelessWidget {
                           color: Colors.black,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Poppins-Bold')),
+
+                  Text(
+                    igList[id]['title'],
+                    style: GoogleFonts.poppins(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                   const SizedBox(height: 5),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -66,6 +84,10 @@ class IgDetailPage extends StatelessWidget {
                           fontSize: 15,
                           color: Colors.black,
                           fontFamily: 'Poppins'),
+                      style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -101,6 +123,16 @@ class IgDetailPage extends StatelessWidget {
                         fontSize: 14,
                         color: Colors.black,
                         fontFamily: 'Poppins')),
+
+              child: Padding(
+                padding: const EdgeInsets.only(left: 38.0, top: 3),
+                child: Text(
+                  'Slide to explore Learning circle',
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
+                ),
               ),
             ),
           ),

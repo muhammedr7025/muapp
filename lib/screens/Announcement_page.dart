@@ -14,6 +14,7 @@ class AnnouncementPage extends StatelessWidget {
               color: Colors.black,
               fontWeight: FontWeight.w500,
             )),
+        title: Text('Announcement'),
       ),
     );
   }

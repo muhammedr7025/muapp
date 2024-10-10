@@ -14,6 +14,7 @@ class CareerPage extends StatelessWidget {
               color: Colors.black,
               fontWeight: FontWeight.w500,
             )),
+        title: const Text('Career'),
       ),
     );
   }
