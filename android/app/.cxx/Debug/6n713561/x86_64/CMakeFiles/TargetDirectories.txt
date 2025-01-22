@@ -1,0 +1,2 @@
+/Users/muhammedr/development/projects/muapp/android/app/.cxx/Debug/6n713561/x86_64/CMakeFiles/edit_cache.dir
+/Users/muhammedr/development/projects/muapp/android/app/.cxx/Debug/6n713561/x86_64/CMakeFiles/rebuild_cache.dir
